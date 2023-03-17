@@ -1,0 +1,29 @@
+import discord
+from discord.ext import commands
+import asyncio
+
+
+client = commands.Bot(command_prefix= ".")
+
+client.remove_command("help")
+
+@client.event
+async def on_member_join(member):
+    guild = client.get_guild(1085622222883913738)
+    channel = guild.get_channel(1085627520717701243)
+    embed=discord.Embed(title="Powitania 👋", description=f"> Witamy cię {member.mention} na serwerze **{guild.name}**! Zapoznaj się z regulaminem i baw się razem z nami")
+    embed.set_author(name="The Młody#1477", icon_url="https://cdn.discordapp.com/attachments/1050836725850722436/1081913593592828064/cs.png")
+    embed.set_footer(text="Młody Community")
+    await channel.send(embed=embed)
+
+@client.command()
+async def pomoc(ctx):
+    embed=discord.Embed(title="Serwerowa Pomoc", description=".pomoc Menu Pomocy\n .komendy Wszystkie serwerowe komendy")
+    embed.set_author(name="The Młody#1477", icon_url="")
+    await ctx.channel.send(embed=embed)
+    
+
+
+
+client.run("MTA4NTYyMjEzODY4NzQ3NTgyMg.GTDBcR.E8JWnVXFrwEm13bN0D84iITOPLkZBOTsUOjcxU")
+
