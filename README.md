@@ -1,0 +1,2 @@
+# Discord-Bot-Poradnik-2
+NIE MA PIERWSZEGO BO ZAPOMNIAŁEM
